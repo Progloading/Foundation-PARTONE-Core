@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+
 
 
 /**
@@ -12,13 +14,17 @@ import java.util.Scanner;
 
 public class In_Out
 {
+    //static LocalDateTime DATE_TIME = LocalDateTime.now();
+
     public static PrintWriter addFriends(PrintWriter outputFile)
     {   
            Scanner scan_1 = new Scanner(System.in);
            Scanner scan_2 = new Scanner(System.in);
 
+           LocalDateTime DATE_TIME = LocalDateTime.now();
+
            outputFile.println(" ");
-           outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>>");
+           outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>> " + DATE_TIME);
            outputFile.println(" ");
            
            outputFile.println("");
@@ -44,10 +50,13 @@ public class In_Out
             Scanner scan_3 = new Scanner(System.in);
             Scanner scan_4 = new Scanner(System.in);
 
+            LocalDateTime DATE_TIME = LocalDateTime.now();
+
             outputFile.println(" ");
-            outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>>");
+            outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>> " + DATE_TIME);
             outputFile.println(" ");
 
+            outputFile.println("");
             System.out.print("How many quotes would you like to add? ");
             int quotations = scan_3.nextInt();
             
@@ -55,6 +64,7 @@ public class In_Out
             {
                 outputFile.println(" ");
                 System.out.println("Enter the quote -> ");
+                outputFile.println("");
                 String quote = scan_4.nextLine();
 
                 outputFile.println(quote);
@@ -70,6 +80,7 @@ public class In_Out
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
+        String filename;
 
         System.out.print("What would you like to do? (1 or 2) ");
         int choice = scanner.nextInt();
@@ -79,7 +90,8 @@ public class In_Out
             case 1:
                 try
                 {
-                    PrintWriter outputFile_ONE = new PrintWriter("close_friends.txt");
+                    filename = "close_friends.txt";
+                    PrintWriter outputFile_ONE = new PrintWriter(new FileWriter(filename, true));
                     addFriends(outputFile_ONE);
                 }catch(Exception e)
                 {
@@ -90,7 +102,8 @@ public class In_Out
             case 2:
                 try
                 {
-                    PrintWriter outputFile_TWO = new PrintWriter("Quotes.txt");
+                    filename = "Quotes.txt";
+                    PrintWriter outputFile_TWO = new PrintWriter(new FileWriter(filename, true));
                     quotes_Added(outputFile_TWO);
                 }catch(Exception e)
                 {
@@ -99,7 +112,8 @@ public class In_Out
             break;
 
         }
-        
+
+        System.out.println("");
         System.out.println("Data written to file.");
         scanner.close();
         
