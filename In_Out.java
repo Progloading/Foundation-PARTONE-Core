@@ -7,21 +7,44 @@ import java.time.LocalDateTime;
 /**
  * 
  * File input/output program demonstrating basic IO instructions
- * by writing data to a simple text file.
+ * by writing data to a simple text file. Manipulating those text
+ * files for individual needs (Whatever flights your fancy).
+ * 
+ * 
+ * 
+ * 
  */
 
 
 
 public class In_Out
 {
-    //static LocalDateTime DATE_TIME = LocalDateTime.now();
+    static LocalDateTime DATE_TIME = LocalDateTime.now();
+    /*
+     *public static PrintWriter readFriends()
+    {
+
+    } 
+     * Next order of business is reading the close_friends file
+     * with the help of streams and conducting some operation to feed into pipeline. 
+     * Potential Operations:
+     *  A) capitilize all names
+     *  B) return names beginning with a particular letter
+     *  C) reversing names beginning with a particular letter
+     *  D) reversing names only
+     *  E) Put names in alphabetical order and run a separate operation on the resulting list
+     *      (perhaps, add a start next to "really" close friends and updating a new file of those)
+     * 
+     * 
+     * 
+     * 
+     */
+    
 
     public static PrintWriter addFriends(PrintWriter outputFile)
     {   
            Scanner scan_1 = new Scanner(System.in);
            Scanner scan_2 = new Scanner(System.in);
-
-           LocalDateTime DATE_TIME = LocalDateTime.now();
 
            outputFile.println(" ");
            outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>> " + DATE_TIME);
@@ -49,9 +72,7 @@ public class In_Out
     {
             Scanner scan_3 = new Scanner(System.in);
             Scanner scan_4 = new Scanner(System.in);
-
-            LocalDateTime DATE_TIME = LocalDateTime.now();
-
+            
             outputFile.println(" ");
             outputFile.println("<<<<<<<<<< New Entry >>>>>>>>>> " + DATE_TIME);
             outputFile.println(" ");
