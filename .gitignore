@@ -1,0 +1,14 @@
+# <<< Java Build >>>
+
+*.class
+*.jar
+*.war
+*.ear
+
+# <<< Secret Config >>>
+
+config.properties
+
+# <<< VScode Settings >>>
+
+.vscode/
